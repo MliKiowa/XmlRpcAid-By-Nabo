@@ -24,6 +24,8 @@ class XmlRpcAid_Plugin implements Typecho_Plugin_Interface
       if (false == self::isWritable(dirname(__FILE__) . '/temp/')) {
         throw new Typecho_Plugin_Exception(_t('对不起，插件目录不可写，无法正常使用此功能'));
       }
+      if(file_exists(!dirname(__FILE__)."/temp/"))
+        mkdir (dirname(__FILE__)."/temp/",0777);
       Helper::addAction(self::$action, 'XmlRpcAid_Action');
       Helper::addPanel(1, self::$panel, 'XmlRpc更新', 'XmlRpc更新控制台', 'administrator');
       return _t("QAQ Loading...");

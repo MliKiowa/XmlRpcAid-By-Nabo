@@ -11,4 +11,4 @@ function api_get($url)
     curl_close ($ch);
     return $result;
 }
-   function releases_s($username,$reposname,$api) {return json_decode(api_get($api."https://api.github.com/repos/".$username."/".$reposname."/releases")); 
+   function releases_s($username,$reposname,$api) {return json_decode(api_get($api."https://api.github.com/repos/".$username."/".$reposname."/releases"))}; 

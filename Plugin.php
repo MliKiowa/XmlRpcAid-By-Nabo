@@ -71,9 +71,7 @@ class XmlRpcAid_Plugin implements Typecho_Plugin_Interface
               }else{
                 unlink($file);
               }
-              //var_dump($iezipok);
               $ziplist=($zipxml->fileList(dirname(__FILE__)."/temp/xml.zip"));
-              // var_dump(dirname(__FILE__)."/temp/".$ziplist["dirs"][0]."XmlRpc.php");
               rename(dirname(__FILE__)."/temp/".$ziplist["dirs"][0]."XmlRpc.php",$file);
               return 0;
             }

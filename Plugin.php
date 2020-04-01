@@ -46,6 +46,8 @@ class XmlRpcAid_Plugin implements Typecho_Plugin_Interface
           _t('若启用升级前会备份相关文件')
           );
           $form->addInput($t);
+          $t= new Typecho_Widget_Helper_Form_Element_Text('apiurl', null, null, _t('代理加速api'), _t('作用：加速更新检测 不排查减速 可以使用https://bird.ioliu.cn/v2/?url='));
+          $form->addInput($t);
         }
 
         public static function personalConfig(Typecho_Widget_Helper_Form $form)

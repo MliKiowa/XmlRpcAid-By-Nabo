@@ -17,6 +17,8 @@ class XmlRpcAid_Plugin implements Typecho_Plugin_Interface
   public static $panel = 'XmlRpcAid/console.php';
   public static function activate()
     {
+     if(file_exists(!dirname(__FILE__)."/temp/"))
+        mkdir (dirname(__FILE__)."/temp/",0777);
       if (false == self::isAvailable()) {
         throw new Typecho_Plugin_Exception(_t('对不起, 您的主机没有打开 allow_url_fopen 功能而且不支持 php-curl 扩展, 无法正常使用此功能'));
       }
@@ -24,8 +26,6 @@ class XmlRpcAid_Plugin implements Typecho_Plugin_Interface
       if (false == self::isWritable(dirname(__FILE__) . '/temp/')) {
         throw new Typecho_Plugin_Exception(_t('对不起，插件目录不可写，无法正常使用此功能'));
       }
-      if(file_exists(!dirname(__FILE__)."/temp/"))
-        mkdir (dirname(__FILE__)."/temp/",0777);
       Helper::addAction(self::$action, 'XmlRpcAid_Action');
       Helper::addPanel(1, self::$panel, 'XmlRpc更新', 'XmlRpc更新控制台', 'administrator');
       return _t("QAQ Loading...");

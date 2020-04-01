@@ -15,7 +15,7 @@ if($isapex)include 'ApexUi.php';
 <?php include 'page-title.php'; ?>
 </h3> 
 </div>
-<table class="table align-items-center table-flush table-hover typecho-list-table">
+<table class="table align-items-center table-flush table-hover typecho-list-table typecho-table-wrap">
 <colgroup>
 <col width="25%"/>
 <col width="45%"/>

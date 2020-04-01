@@ -43,7 +43,6 @@ foreach((array)$releasearr as $vermain){
 
 </div>
 </div>
-</div>
 <?php
 include 'copyright.php';
 include 'common-js.php';

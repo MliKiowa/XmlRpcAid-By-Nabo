@@ -1,6 +1,4 @@
 <?
-//测试token 49e22b37f6795a9264909642c5afcc123cc4e2fb
-//https://api.github.com/users/solomonxie
 function api_get($url,$api)
   {
     $ch = curl_init();

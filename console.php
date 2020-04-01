@@ -27,7 +27,7 @@ $current = $request->get('act', 'index');
 </thead>
 <tbody>
 <?php
-foreach( $releasearr as $vermain){
+foreach((array)$releasearr as $vermain){
   $vermain=(array)$vermain;
   echo '<tr id="XmlRpc-'.$vermain["tag_name"].'">';
   echo "<td>".$vermain["name"]."</td>";

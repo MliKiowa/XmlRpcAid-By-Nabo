@@ -2,7 +2,7 @@
 include 'header.php';
 include 'menu.php';
 include dirname(__FILE__)."/GitHelper.php";
-$releasearr=releases_s("kraity","typecho-xmlrpc");
+$releasearr=releases_s("kraity","typecho-xmlrpc",Typecho_Widget::widget('Widget_Options')->plugin('XmlRpcAid')->apiurl);
 $isapex=file_exists(dirname(dirname(dirname(dirname(__FILE__))))."/admin/ApexUi.php");
 if($isapex)include 'ApexUi.php';
 ?>

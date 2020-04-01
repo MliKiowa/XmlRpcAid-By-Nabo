@@ -65,6 +65,5 @@ if(!$isapex){
 <?php
 $isapex?:include 'copyright.php';
 include 'common-js.php';
-include 'footer.php';
-if($isapex)include 'Apexfooter.php';
+include ($isapex? 'Apexfooter.php','footer.php');
 ?>

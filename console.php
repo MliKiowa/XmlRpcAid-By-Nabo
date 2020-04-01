@@ -61,7 +61,6 @@ if(!$isapex){
 </div>
 </div>
 </div>
-</div>
 <?php
 $isapex?:include 'copyright.php';
 include 'common-js.php';

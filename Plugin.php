@@ -5,7 +5,7 @@
  *
  * @package XmlRpcAid
  * @author 乔千
- * @version 1.5.0
+ * @version 1.7.0
  * @link https://blog.mumuli.cn
  */
 require_once dirname(__FILE__) . "/ZipHelper.php";

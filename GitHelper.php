@@ -1,5 +1,5 @@
 <?
-function api_get($url,$api)
+function api_get($url)
   {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url); 

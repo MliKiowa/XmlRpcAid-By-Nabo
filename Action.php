@@ -20,8 +20,10 @@ class XmlRpcAid_Action extends Typecho_Widget implements Widget_Interface_Do
           case 1:
           $this->widget('Widget_Notice')->set("解压失败", 'fail' );
           break; 
+          default:
+           $this->widget('Widget_Notice')->set("未知错误", 'unknown' ); 
+          break;
         }
-       // var_dump($isup);
         /** 转向原页 */
          $this->response->goBack();
       }

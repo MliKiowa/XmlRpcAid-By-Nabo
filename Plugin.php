@@ -17,6 +17,8 @@ class XmlRpcAid_Plugin implements Typecho_Plugin_Interface
   public static $panel = 'XmlRpcAid/console.php';
   public static function activate()
     {
+     if(!file_exists(dirname(__FILE__)."/temp/"))
+        mkdir (dirname(__FILE__)."/temp/",0777);
       if (false == self::isAvailable()) {
         throw new Typecho_Plugin_Exception(_t('对不起, 您的主机没有打开 allow_url_fopen 功能而且不支持 php-curl 扩展, 无法正常使用此功能'));
       }
@@ -25,7 +27,7 @@ class XmlRpcAid_Plugin implements Typecho_Plugin_Interface
         throw new Typecho_Plugin_Exception(_t('对不起，插件目录不可写，无法正常使用此功能'));
       }
       Helper::addAction(self::$action, 'XmlRpcAid_Action');
-      Helper::addPanel(1, self::$panel, 'XmlRpc更新', 'XmlRpc更新控制台', 'administrator');
+      Helper::addPanel(1, self::$panel, 'XmlRpcAid', 'XmlRpc更新控制台', 'administrator');
       return _t("QAQ Loading...");
     }
 
@@ -45,6 +47,8 @@ class XmlRpcAid_Plugin implements Typecho_Plugin_Interface
           _t('更新前备份相关文件'),
           _t('若启用升级前会备份相关文件')
           );
+          $form->addInput($t);
+          $t= new Typecho_Widget_Helper_Form_Element_Text('apiurl', null, null, _t('代理加速api'), _t('作用：加速更新检测 不排除减速的可能 可以使用https://bird.ioliu.cn/v2/?url='));
           $form->addInput($t);
         }
 

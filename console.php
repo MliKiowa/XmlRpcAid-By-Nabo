@@ -2,7 +2,7 @@
 include 'header.php';
 include 'menu.php';
 include dirname(__FILE__)."/GitHelper.php";
-$releasearr=releases_s("kraity","typecho-xmlrpc");
+$releasearr=releases_s("kraity","typecho-xmlrpc",Typecho_Widget::widget('Widget_Options')->plugin('XmlRpcAid')->apiurl);
 $isapex=file_exists(dirname(dirname(dirname(dirname(__FILE__))))."/admin/ApexUi.php");
 if($isapex)include 'ApexUi.php';
 ?>
@@ -15,7 +15,7 @@ if($isapex)include 'ApexUi.php';
 <?php include 'page-title.php'; ?>
 </h3> 
 </div>
-<table class="table align-items-center table-flush table-hover typecho-list-table">
+<table class="table align-items-center table-flush table-hover typecho-list-table typecho-table-wrap">
 <colgroup>
 <col width="25%"/>
 <col width="45%"/>
@@ -61,9 +61,8 @@ if(!$isapex){
 </div>
 </div>
 </div>
-</div>
 <?php
 $isapex?:include 'copyright.php';
 include 'common-js.php';
-include ($isapex? 'Apexfooter.php','footer.php');
+include ($isapex? 'Apexfooter.php':'footer.php');
 ?>
